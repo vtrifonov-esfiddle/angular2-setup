@@ -1,0 +1,6 @@
+bin
+obj
+wwwroot
+/Angular2Setup/.vs/config
+/Angular2Setup/Angular2Setup/node_modules
+/Angular2Setup/packages
