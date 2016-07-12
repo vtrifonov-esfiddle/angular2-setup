@@ -23,8 +23,8 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 }
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: '<h1>My First Angular 2 App Updated</h1>'
+                        selector: 'main-component',
+                        template: '<h1>My First Angular 2 with .component</h1>'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -34,3 +34,4 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         }
     }
 });
+//# sourceMappingURL=app.component.js.map

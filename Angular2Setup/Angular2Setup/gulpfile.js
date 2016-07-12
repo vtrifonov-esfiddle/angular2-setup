@@ -19,6 +19,7 @@ gulp.task('clean', function () {
 gulp.task("scriptsNStyles", () => {
     gulp.src([
             'core-js/client/**',
+            'angular2-in-memory-web-api/**',
             'systemjs/dist/system.src.js',
             'reflect-metadata/**',
             'rxjs/**',
@@ -38,13 +39,17 @@ gulp.task('ts', function (done) {
             "app/*.ts"
     ])
         .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
-    return tsResult.js.pipe(gulp.dest('./app'));
+    return tsResult.js.pipe(gulp.dest('wwwroot/app'));
 });
-
+gulp.task('copySystemjs.config', function () {
+    gulp.src([
+            "app/systemjs.config.js"
+    ]).pipe(gulp.dest('./wwwroot/app'))
+});
 gulp.task('watch', ['watch.ts']);
 
 gulp.task('watch.ts', ['ts'], function () {
     return gulp.watch('app/*.ts', ['ts']);
 });
 
-gulp.task('default', ['scriptsNStyles', 'ts']);
+gulp.task('default', ['scriptsNStyles', 'copySystemjs.config', 'ts']);
