@@ -15,4 +15,3 @@ System.register(['@angular/platform-browser-dynamic', './app'], function(exports
         }
     }
 });
-//# sourceMappingURL=bootstrap.js.map
